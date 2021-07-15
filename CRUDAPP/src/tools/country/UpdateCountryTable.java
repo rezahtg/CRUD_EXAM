@@ -16,6 +16,7 @@ import tools.DB_Connections;
 public class UpdateCountryTable {
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
     public static void updateCount(){
+        
         //Deklarasi Set variable
         String co_id;
         String co_name;
