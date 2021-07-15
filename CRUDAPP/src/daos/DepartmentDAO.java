@@ -26,7 +26,7 @@ public class DepartmentDAO {
     
     public List<Department> getDepartment() {
         List<Department> dep = new ArrayList<Department>();
-        String query = "SELECT * FROM Departments";
+        String query = "SELECT * FROM Departments order by department_id";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();

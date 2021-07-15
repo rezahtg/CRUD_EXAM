@@ -1,0 +1,126 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tools.employee;
+
+import daos.DepartmentDAO;
+import models.Department;
+import tools.DB_Connections;
+import static tools.employee.EmployeeTable.scanner;
+
+/**
+ *
+ * @author Kenji
+ */
+public class DepartmentTable {
+    
+    public static DB_Connections connect = new DB_Connections();
+    public static DepartmentDAO depDAO = new DepartmentDAO(connect.getConnection());
+    
+    public static java.util.Scanner scanner = new java.util.Scanner(System.in);
+    
+    
+    
+    public static void insertdept()
+    {
+        
+        String Id_dept, Name_dept, managerId_depet,locationId_dept;
+        int Id_dept2,managerId_depet2,locationId_dept2;
+        
+        System.out.println("Masukkan ID Department = ");
+        Id_dept = scanner.nextLine();
+        Id_dept2 = Integer.parseInt(Id_dept);                
+        System.out.println("Masukkan  Name Department = ");
+        Name_dept = scanner.nextLine();
+        
+        System.out.println("Masukkan Manager ID  = ");
+        managerId_depet = scanner.nextLine();
+        managerId_depet2 = Integer.parseInt(managerId_depet); 
+        
+        System.out.println("Masukkan Location Id = ");
+        locationId_dept = scanner.nextLine();
+        locationId_dept2 = Integer.parseInt(locationId_dept); 
+        
+        //Insert Department
+
+
+        Department dep = new Department();
+        dep.setDepartment_id(Id_dept2);
+  
+        dep.setDepartment_name(Name_dept);
+    
+        dep.setManager_id(managerId_depet2);
+        dep.setLocation_id(locationId_dept2);
+       
+       
+        if (depDAO.insert(dep)) {
+            System.out.println("Insert Data Berhasil");
+        }    
+    }
+    public static void updatedept()
+    {
+        
+        String Id_dept, Name_dept, managerId_depet,locationId_dept;
+        int Id_dept2,managerId_depet2,locationId_dept2;
+        
+        System.out.println("Masukkan ID Department = ");
+        Id_dept = scanner.nextLine();
+        Id_dept2 = Integer.parseInt(Id_dept);                
+        System.out.println("Masukkan  Name Department = ");
+        Name_dept = scanner.nextLine();
+        
+        System.out.println("Masukkan Manager ID  = ");
+        managerId_depet = scanner.nextLine();
+        managerId_depet2 = Integer.parseInt(managerId_depet); 
+        
+        System.out.println("Masukkan Location Id = ");
+        locationId_dept = scanner.nextLine();
+        locationId_dept2 = Integer.parseInt(locationId_dept); 
+        
+        // Update Department
+
+        Department dep = new Department();
+        
+        dep.setDepartment_id(Id_dept2);
+        dep.setDepartment_name(Name_dept);
+        dep.setManager_id(managerId_depet2);
+        dep.setLocation_id(locationId_dept2);
+
+        if (depDAO.Update(dep)) {
+            System.out.println("Update Data Berhasil");
+        }       
+      
+    }
+    public static void deletedept()
+    {
+        String Id_dept;
+        int Id_dept2;
+        
+        System.out.println("Masukkan ID Department = ");
+        Id_dept = scanner.nextLine();
+        Id_dept2 = Integer.parseInt(Id_dept);  
+        //Delete row from departments
+
+        Department dep = new Department();
+        dep.setDepartment_id(Id_dept2);
+     
+        if(depDAO.Delete(dep))
+        {
+            System.out.println("Delete Data Berhasil");
+        }
+    }
+    public static void showdept()
+    {
+      
+
+        for (Department dep : depDAO.getDepartment()) {
+            System.out.println(dep.getDepartment_id() + " || " + dep.getDepartment_name() + " || "+ dep.getManager_id() + " || " + dep.getLocation_id());
+        }
+        
+    }
+   
+    
+    
+}

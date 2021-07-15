@@ -27,7 +27,7 @@ public class EmployeeDAO {
     
     public List<Employee> getEmployees() {
         List<Employee> emplo = new ArrayList<Employee>();
-        String query = "SELECT * FROM Employees";
+        String query = "SELECT * FROM Employees order by employee_id";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();

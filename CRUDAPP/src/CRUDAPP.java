@@ -1,3 +1,7 @@
+
+
+import tools.employee.EmployeeTable;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,9 +23,13 @@ public class CRUDAPP {
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
     public static void main(String[] args) {
         
-        Header();
-        CountryTable.showCountry();
+      
+     //   CountryTable.showCountry();
+     
+        EmployeeTable.ShowEmp();
+        EmployeeTable.DeleteEmp();
         
+        EmployeeTable.ShowEmp();
 ;
     }
     
