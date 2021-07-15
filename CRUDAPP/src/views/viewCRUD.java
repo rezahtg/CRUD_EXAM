@@ -23,13 +23,10 @@ public class viewCRUD {
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
     public static void viewsCRUD(){
         Header();
-        
-        
-        
-        
     }
     
     public static void Header(){
+        System.out.println("");
         System.out.println("||=========================================================================================================||");
         System.out.println("||                                                                                                         ||");
         System.out.println("||                                       APLIKASI CRUD HR SCHEME                                           ||");
@@ -39,7 +36,7 @@ public class viewCRUD {
         System.out.println("||\t Menu: 1. Show Data: \t|| 2. Insert Data \t|| 3. Update Data \t|| 4. Delete Data          ||");
         System.out.println("||=========================================================================================================||");
         System.out.println("");
-        System.out.print("Pilih Manu (0 To Exit): ");
+        System.out.print("Pilih Menu (0.Exit): ");
         menu = scanner.nextLine();
       
         
@@ -57,8 +54,19 @@ public class viewCRUD {
         }else {
             System.out.println("Perintah Tidak dikenali");
         }
-        
-        
+    }
+    
+    public static void Footer(){
+        System.out.println("");
+        System.out.println("Yay, Perintah Selesai!");
+        System.out.print("Mulai Lagi?(y/n)");
+        menu = scanner.nextLine();
+        if (menu.equals("y")) {
+            Header();
+        }else if(menu.equals("n")){
+            //break
+        }
+        System.out.println("");
     }
     
     public static void menuShow(){
@@ -69,7 +77,7 @@ public class viewCRUD {
         System.out.println("4. Locations");
         System.out.println("5. Country");
         System.out.println("6. Regions");
-        System.out.print("Pilih Table :");
+        System.out.print("Pilih Table (0.Exit, 9.Back):");
         menu = scanner.nextLine();
         if (menu.equals("1")) {
             EmployeeTable.ShowEmp();
@@ -91,7 +99,7 @@ public class viewCRUD {
         else {
             System.out.println("Perintah Tidak dikenali");
         }
-        
+        Footer();
     }
     
     public static void menuInsert(){
@@ -136,6 +144,7 @@ public class viewCRUD {
         else {
             System.out.println("Perintah Tidak dikenali");
         }
+        Footer();
     }
     
     public static void menuUpdate(){
@@ -146,6 +155,9 @@ public class viewCRUD {
         System.out.println("4. Locations");
         System.out.println("5. Country");
         System.out.println("6. Regions");
+        System.out.println("----------");
+        System.out.println("9. Kembali");
+        System.out.println("0. Berhenti");
         System.out.print("Pilih Table:");
         menu = scanner.nextLine();
         if (menu.equals("1")) {
@@ -180,6 +192,7 @@ public class viewCRUD {
         else {
             System.out.println("Perintah Tidak dikenali");
         }
+        Footer();
     }
     
     public static void menuDelete(){
@@ -224,6 +237,7 @@ public class viewCRUD {
         else {
             System.out.println("Perintah Tidak dikenali");
         }
+        Footer();
     }
     
 }
