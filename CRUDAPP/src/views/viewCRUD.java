@@ -6,7 +6,7 @@
 package views;
 
 import tools.country.CountryTable;
-import tools.employee.DepartmentTable;
+import tools.department.DepartmentTable;
 import tools.employee.EmployeeTable;
 import tools.jobs.JobTable;
 import tools.location.LocationTable;
@@ -224,8 +224,5 @@ public class viewCRUD {
             System.out.println("Perintah Tidak dikenali");
         }
     }
-    
-    
-  
     
 }

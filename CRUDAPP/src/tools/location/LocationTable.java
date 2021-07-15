@@ -5,7 +5,6 @@
  */
 package tools.location;
 
-import daos.CountryDAO;
 import daos.LocationDAO;
 import models.Location;
 import tools.DB_Connections;
@@ -48,7 +47,7 @@ public class LocationTable {
         city = scanner.nextLine();
         System.out.print("Masukkan Nama Provinsi : ");
         state = scanner.nextLine();
-        System.out.print("Masukkan Region ID : ");
+        System.out.print("Masukkan Country ID : ");
         l_country = scanner.nextLine();
         
 
@@ -102,7 +101,7 @@ public class LocationTable {
         String l_country;
         
         //Input data into variable
-        System.out.print("Masukkan Location ID Yang Akan Diubah : ");
+        System.out.print("Masukkan Location ID : ");
         l_id = scanner.nextInt();
         System.out.print("Ubah Nama Jalan : ");
         scanner.nextLine();
@@ -113,7 +112,7 @@ public class LocationTable {
         city = scanner.nextLine();
         System.out.print("Ubah Nama Provinsi : ");
         state = scanner.nextLine();
-        System.out.print("Ubah Region ID : ");
+        System.out.print("Ubah Country ID : ");
         l_country = scanner.nextLine();
         
 

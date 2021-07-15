@@ -37,7 +37,7 @@ public class CountryTable {
         c_id = scanner.nextLine();
         System.out.print("Masukkan Country Name : ");
         c_name = scanner.nextLine();
-        System.out.print("Masukkan Region Name : ");
+        System.out.print("Masukkan Region ID : ");
         c_reg = scanner.nextInt();
         
         // Set data on variable to database
@@ -85,7 +85,7 @@ public class CountryTable {
         co_id = scanner.nextLine();
         System.out.print("Ubah Data Country Name baru : ");
         co_name = scanner.nextLine();
-        System.out.print("Ubah Data Region Name : ");
+        System.out.print("Ubah Data Region ID : ");
         co_reg = scanner.nextInt();
         
         // Set data on variable to database
