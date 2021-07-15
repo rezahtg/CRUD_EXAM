@@ -33,11 +33,11 @@ public class CountryTable {
         int c_reg;
         
         //Input data into variable
-        System.out.println("Masukkan Country ID : ");
+        System.out.print("Masukkan Country ID : ");
         c_id = scanner.nextLine();
-        System.out.println("Masukkan Country Name : ");
+        System.out.print("Masukkan Country Name : ");
         c_name = scanner.nextLine();
-        System.out.println("Masukkan Region Name : ");
+        System.out.print("Masukkan Region Name : ");
         c_reg = scanner.nextInt();
         
         // Set data on variable to database
@@ -59,7 +59,7 @@ public class CountryTable {
          
         String c_id;
         
-        System.out.println("Masukkan Country ID : ");
+        System.out.print("Masukkan Country ID : ");
         c_id = scanner.nextLine();
         
         Country country = new Country();

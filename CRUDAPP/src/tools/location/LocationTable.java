@@ -7,11 +7,8 @@ package tools.location;
 
 import daos.CountryDAO;
 import daos.LocationDAO;
-import models.Country;
 import models.Location;
 import tools.DB_Connections;
-import static tools.country.CountryTable.countdao;
-import static tools.country.CountryTable.scanner;
 
 /**
  *
@@ -21,7 +18,6 @@ public class LocationTable {
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
     
     public static DB_Connections connection = new DB_Connections();
-    public static CountryDAO countdao = new CountryDAO(connection.getConnection());
     public static LocationDAO locdao = new LocationDAO(connection.getConnection());
     
     public static void showLocation(){    
@@ -80,7 +76,7 @@ public class LocationTable {
          
         int l_id;
         
-        System.out.println("Masukkan Location ID : ");
+        System.out.print("Masukkan Location ID : ");
         l_id = scanner.nextInt();
         
         Location location = new Location();

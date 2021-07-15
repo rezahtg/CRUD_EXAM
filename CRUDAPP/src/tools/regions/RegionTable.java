@@ -26,11 +26,11 @@ public class RegionTable {
     public static void insertRegion() {        
     
     Region inReg = new Region();
-    System.out.println("Masukkan ID Region = ");
+    System.out.print("Masukkan ID Region = ");
     id_region = inpReg.nextLine();
     id_region2 = Integer.parseInt(id_region);                
     inReg.setIdReg(id_region2);
-    System.out.println("Masukkan Nama Region = ");
+    System.out.print("Masukkan Nama Region = ");
     nama_region = inpReg.nextLine();
     inReg.setNameReg(nama_region);
     System.out.println("\nID Region :"+nama_region);
@@ -45,11 +45,11 @@ public class RegionTable {
     public static void updateRegion() {
 
     Region reg = new Region();
-    System.out.println("Masukkan ID Region = ");
+    System.out.print("Masukkan ID Region = ");
     id_region = inpReg.nextLine();
     id_region2 = Integer.parseInt(id_region);                
     reg.setIdReg(id_region2);              
-    System.out.println("Masukkan Nama Region = ");
+    System.out.print("Masukkan Nama Region = ");
     nama_region = inpReg.nextLine();
     reg.setNameReg(nama_region);
     System.out.println("ID Region :"+id_region2);
@@ -64,7 +64,7 @@ public class RegionTable {
     public static void deleteRegion() {
     
     Region delReg = new Region();
-    System.out.println("Masukkan ID Region = ");
+    System.out.print("Masukkan ID Region = ");
     id_region2 = inpReg.nextInt();
     delReg.setIdReg(id_region2);
     System.out.println("\nID Region :"+id_region2);

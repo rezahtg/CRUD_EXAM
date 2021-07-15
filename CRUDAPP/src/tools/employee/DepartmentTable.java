@@ -8,7 +8,6 @@ package tools.employee;
 import daos.DepartmentDAO;
 import models.Department;
 import tools.DB_Connections;
-import static tools.employee.EmployeeTable.scanner;
 
 /**
  *
@@ -29,17 +28,17 @@ public class DepartmentTable {
         String Id_dept, Name_dept, managerId_depet,locationId_dept;
         int Id_dept2,managerId_depet2,locationId_dept2;
         
-        System.out.println("Masukkan ID Department = ");
+        System.out.print("Masukkan ID Department = ");
         Id_dept = scanner.nextLine();
         Id_dept2 = Integer.parseInt(Id_dept);                
-        System.out.println("Masukkan  Name Department = ");
+        System.out.print("Masukkan  Name Department = ");
         Name_dept = scanner.nextLine();
         
-        System.out.println("Masukkan Manager ID  = ");
+        System.out.print("Masukkan Manager ID  = ");
         managerId_depet = scanner.nextLine();
         managerId_depet2 = Integer.parseInt(managerId_depet); 
         
-        System.out.println("Masukkan Location Id = ");
+        System.out.print("Masukkan Location Id = ");
         locationId_dept = scanner.nextLine();
         locationId_dept2 = Integer.parseInt(locationId_dept); 
         
@@ -65,17 +64,17 @@ public class DepartmentTable {
         String Id_dept, Name_dept, managerId_depet,locationId_dept;
         int Id_dept2,managerId_depet2,locationId_dept2;
         
-        System.out.println("Masukkan ID Department = ");
+        System.out.print("Masukkan ID Department = ");
         Id_dept = scanner.nextLine();
         Id_dept2 = Integer.parseInt(Id_dept);                
-        System.out.println("Masukkan  Name Department = ");
+        System.out.print("Masukkan  Name Department = ");
         Name_dept = scanner.nextLine();
         
-        System.out.println("Masukkan Manager ID  = ");
+        System.out.print("Masukkan Manager ID  = ");
         managerId_depet = scanner.nextLine();
         managerId_depet2 = Integer.parseInt(managerId_depet); 
         
-        System.out.println("Masukkan Location Id = ");
+        System.out.print("Masukkan Location Id = ");
         locationId_dept = scanner.nextLine();
         locationId_dept2 = Integer.parseInt(locationId_dept); 
         
@@ -98,7 +97,7 @@ public class DepartmentTable {
         String Id_dept;
         int Id_dept2;
         
-        System.out.println("Masukkan ID Department = ");
+        System.out.print("Masukkan ID Department = ");
         Id_dept = scanner.nextLine();
         Id_dept2 = Integer.parseInt(Id_dept);  
         //Delete row from departments

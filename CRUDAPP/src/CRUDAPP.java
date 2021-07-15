@@ -1,6 +1,7 @@
 
 
 import tools.employee.EmployeeTable;
+import views.viewCRUD;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,38 +23,6 @@ public class CRUDAPP {
      */
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
     public static void main(String[] args) {
-        
-      
-     //   CountryTable.showCountry();
-     
-        EmployeeTable.ShowEmp();
-        EmployeeTable.DeleteEmp();
-        
-        EmployeeTable.ShowEmp();
-;
+        viewCRUD.viewsCRUD();
     }
-    
-    public static void Header(){
-        System.out.println("||=========================================================================================================||");
-        System.out.println("||                                                                                                         ||");
-        System.out.println("||                                       APLIKASI CRUD HR SCHEME                                           ||");
-        System.out.println("||                               ini merupakan aplikasi CRUD HR SCHEME sederhana                           ||");
-        System.out.println("||=========================================================================================================||");
-        System.out.println("||Menu: 1. Show Data: \t|| 2. Insert Data \t|| 3. Update Data \t|| 4. Delete Data                  ||");
-        System.out.println("||=========================================================================================================||");
-        System.out.print("Pilih Mana: ");
-        
-    }
-    
-    
-    
-    
-    /**
-     * Table Regions
-     */
-    
-    public static void insertRegion() {
-
-    }
-    
 }

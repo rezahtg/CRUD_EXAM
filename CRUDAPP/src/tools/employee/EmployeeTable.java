@@ -6,7 +6,6 @@
 package tools.employee;
 
 import daos.EmployeeDAO;
-import java.util.Scanner;
 import models.Employee;
 import tools.DB_Connections;
 
@@ -35,42 +34,42 @@ public class EmployeeTable {
         double commissionPct_emp2;
         
         
-        System.out.println("Masukkan ID Employee = ");
+        System.out.print("Masukkan ID Employee = ");
         id_emp = scanner.nextLine();
         id_emp2 = Integer.parseInt(id_emp);                
-        System.out.println("Masukkan First Name = ");
+        System.out.print("Masukkan First Name = ");
         firstName_emp = scanner.nextLine();
         
-        System.out.println("Masukkan Last Name = ");
+        System.out.print("Masukkan Last Name = ");
         lastName_emp = scanner.nextLine();
         
-        System.out.println("Masukkan Email= ");
+        System.out.print("Masukkan Email= ");
         email_emp = scanner.nextLine();
         
-        System.out.println("Masukkan Phone Number = ");
+        System.out.print("Masukkan Phone Number = ");
         phoneNumber_emp = scanner.nextLine();
      
         
-        System.out.println("Masukkan Hire Date(11/Mar/2003) = ");
+        System.out.print("Masukkan Hire Date(11/Mar/2003) = ");
         hireDate_emp = scanner.nextLine();
         
-        System.out.println("Masukkan Job Id = ");
+        System.out.print("Masukkan Job Id = ");
         jobId_emp = scanner.nextLine();
         
-        System.out.println("Masukkan Salary = ");
+        System.out.print("Masukkan Salary = ");
         salary_emp = scanner.nextLine();
         salary_emp2 = Integer.parseInt(salary_emp);
         
-        System.out.println("Masukkan Commission PCT (0.2) = ");
+        System.out.print("Masukkan Commission PCT (0.2) = ");
         commissionPct_emp = scanner.nextLine();
         commissionPct_emp2 = Double.parseDouble(commissionPct_emp);
         
-        System.out.println("Masukkan Manager Id = ");
+        System.out.print("Masukkan Manager Id = ");
         managerId_emp = scanner.nextLine();
         managerId_emp2 = Integer.parseInt(managerId_emp);
         
         
-        System.out.println("Masukkan Department Id = ");
+        System.out.print("Masukkan Department Id = ");
         departmentId_emp = scanner.nextLine();
         departmentId_emp2 = Integer.parseInt(departmentId_emp);
     
@@ -111,42 +110,42 @@ public class EmployeeTable {
         double commissionPct_emp2;
         
         
-        System.out.println("Masukkan ID Employee = ");
+        System.out.print("Masukkan ID Employee = ");
         id_emp = scanner.nextLine();
         id_emp2 = Integer.parseInt(id_emp);                
-        System.out.println("Masukkan First Name = ");
+        System.out.print("Masukkan First Name = ");
         firstName_emp = scanner.nextLine();
         
-        System.out.println("Masukkan Last Name = ");
+        System.out.print("Masukkan Last Name = ");
         lastName_emp = scanner.nextLine();
         
-        System.out.println("Masukkan Email= ");
+        System.out.print("Masukkan Email= ");
         email_emp = scanner.nextLine();
         
-        System.out.println("Masukkan Phone Number = ");
+        System.out.print("Masukkan Phone Number = ");
         phoneNumber_emp = scanner.nextLine();
      
         
-        System.out.println("Masukkan Hire Date(11/Mar/2003) = ");
+        System.out.print("Masukkan Hire Date(11/Mar/2003) = ");
         hireDate_emp = scanner.nextLine();
         
-        System.out.println("Masukkan Job Id = ");
+        System.out.print("Masukkan Job Id = ");
         jobId_emp = scanner.nextLine();
         
-        System.out.println("Masukkan Salary = ");
+        System.out.print("Masukkan Salary = ");
         salary_emp = scanner.nextLine();
         salary_emp2 = Integer.parseInt(salary_emp);
         
-        System.out.println("Masukkan Commission PCT (0.2) = ");
+        System.out.print("Masukkan Commission PCT (0.2) = ");
         commissionPct_emp = scanner.nextLine();
         commissionPct_emp2 = Double.parseDouble(commissionPct_emp);
         
-        System.out.println("Masukkan Manager Id = ");
+        System.out.print("Masukkan Manager Id = ");
         managerId_emp = scanner.nextLine();
         managerId_emp2 = Integer.parseInt(managerId_emp);
         
         
-        System.out.println("Masukkan Department Id = ");
+        System.out.print("Masukkan Department Id = ");
         departmentId_emp = scanner.nextLine();
         departmentId_emp2 = Integer.parseInt(departmentId_emp);
         
@@ -182,7 +181,7 @@ public class EmployeeTable {
         
         int id_emp2;
         
-        System.out.println("Masukkan ID Employee = ");
+        System.out.print("Masukkan ID Employee = ");
         id_emp2 = scanner.nextInt();
          
         
