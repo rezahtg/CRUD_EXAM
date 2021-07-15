@@ -13,13 +13,13 @@ import tools.DB_Connections;
  *
  * @author rezar
  */
-public class InsertCountryTable {
+public class UpdateCountryTable {
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
-    public static void insertCount(){
+    public static void updateCount(){
         //Deklarasi Set variable
-        String c_id;
-        String c_name;
-        int c_reg;
+        String co_id;
+        String co_name;
+        int co_reg;
         
         //Connection Database
         DB_Connections connection = new DB_Connections();
@@ -27,26 +27,25 @@ public class InsertCountryTable {
         CountryDAO countdao = new CountryDAO(connection.getConnection());
         
         //Input data into variable
-        System.out.println("Masukkan Country ID : ");
-        c_id = scanner.nextLine();
-        System.out.println("Masukkan Country Name : ");
-        c_name = scanner.nextLine();
-        System.out.println("Masukkan Region Name : ");
-        c_reg = scanner.nextInt();
+        System.out.print("Masukkan ID Country yang ingin di ubah : ");
+        co_id = scanner.nextLine();
+        System.out.print("Ubah Data Country Name baru : ");
+        co_name = scanner.nextLine();
+        System.out.print("Ubah Data Region Name : ");
+        co_reg = scanner.nextInt();
         
         // Set data on variable to database
         Country country = new Country();
-        country.setCountry_id(c_id);
-        country.setCountry_name(c_name);
-        country.setRegion_id(c_reg);
+        country.setCountry_name(co_name);
+        country.setRegion_id(co_reg);
+        country.setCountry_id(co_id);
        
        // Expression success or fail
-        if (countdao.insert(country))
+        if (countdao.update(country))
         {
             System.out.println("Data Baru ditambahkan");
         }else{
             System.out.println("Data gagal ditambahkan");
         }
     }
-
 }

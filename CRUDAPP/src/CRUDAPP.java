@@ -10,8 +10,10 @@ import daos.LocationDAO;
 import models.Country;
 import models.Location;
 import tools.DB_Connections;
+import tools.country.DeleteCountryTable;
 import tools.country.InsertCountryTable;
 import tools.country.ShowCountryTable;
+import tools.country.UpdateCountryTable;
 import tools.regions.InsertRegionTable;
 
 /**
@@ -28,16 +30,6 @@ public class CRUDAPP {
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
     public static void main(String[] args) {
 
-                    DB_Connections connection = new DB_Connections();
-//        System.out.println(connection.getConnection());
-        
-        CountryDAO countdao = new CountryDAO(connection.getConnection());
-        // Menampilkan data dari tabel country
-//        for (Country country : countdao.getAll()) {
-//            System.out.println(country.getCountry_id() + " - " + country.getCountry_name() + " - " + country.getRegion_id()); 
-//        }
-
-
           // memasukkan data inputan pada table location
 //          Location location = new Location();
 //          location.setStreet("Jl.Kramat 6");
@@ -53,15 +45,6 @@ public class CRUDAPP {
 //            System.out.println("Data Baru ditambahkan");
 //        }else{
 //            System.out.println("Data gagal ditambahkan");
-//        }
-
-       
-//        
-//        // Menghapus data inputan table country
-//        if (countdao.delete(country)){
-//            System.out.println("Data Berhasil dihapus");
-//        } else{
-//            System.out.println("Data gagal dihapus");
 //        }
 
         // Menghapus data inputan table location
@@ -94,8 +77,12 @@ public class CRUDAPP {
 //            System.out.println(loc.getLocation_id() + " - " + loc.getStreet() + " - " + loc.getPostal_code() + " - " + loc.getCity() + " - " + loc.getState() + " - " + loc.getCountry_id()); 
 //        }
         Header();
-        insertRegion();
- 
+//        insertRegion();
+//        deleteCountry();
+        showCountry();
+        UpdateCountryTable.updateCount();
+        showCountry();
+        
         
     }
     
@@ -106,31 +93,34 @@ public class CRUDAPP {
         System.out.println("||   ini merupakan aplikasi CRUD karyawan sederhana    ||");
         System.out.println("||=====================================================||");
     }
-    
+    /**
+     * Tabel Country
+     */
     public static void showCountry(){
-        ShowCountryTable showcountry = new ShowCountryTable();
-        
-        showcountry.showCountry();
+        ShowCountryTable.showCountry();
     }
     
     public static void insertCountry(){
-        InsertCountryTable insertcountry = new InsertCountryTable();
-        
-        insertcountry.insertCount();
+        InsertCountryTable.insertCount();
         showCountry();
     }
+    
+    public static void deleteCountry(){
+        showCountry();
+        DeleteCountryTable.deleteCount();
+        showCountry();
+    }
+    
+    
+    
+    /**
+     * Table Regions
+     */
     
     public static void insertRegion() {
         InsertRegionTable insertRegs = new InsertRegionTable();
         
         insertRegs.insertRegion();
     }
-    
-//    public static String input(String info){
-//        System.out.print(info +" : ");
-//        String data = scanner.nextLine();
-//        System.out.println("Anda berada di menu " + data);
-//        return data;
-//    }
     
 }
