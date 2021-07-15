@@ -12,6 +12,7 @@ import models.Location;
 import tools.DB_Connections;
 import tools.country.InsertCountryTable;
 import tools.country.ShowCountryTable;
+import tools.regions.InsertRegionTable;
 
 /**
  *
@@ -93,6 +94,7 @@ public class CRUDAPP {
 //            System.out.println(loc.getLocation_id() + " - " + loc.getStreet() + " - " + loc.getPostal_code() + " - " + loc.getCity() + " - " + loc.getState() + " - " + loc.getCountry_id()); 
 //        }
         Header();
+        insertRegion();
  
         
     }
@@ -116,6 +118,12 @@ public class CRUDAPP {
         
         insertcountry.insertCount();
         showCountry();
+    }
+    
+    public static void insertRegion() {
+        InsertRegionTable insertRegs = new InsertRegionTable();
+        
+        insertRegs.insertRegion();
     }
     
 //    public static String input(String info){
