@@ -10,35 +10,27 @@ package models;
  * @author haikal
  */
 public class Region {
-    private int id; //  DB_REGION ID
-    private String name; //  DB_REGION name
+    private int idReg; //  DB_REGION ID
+    private String nameReg; //  DB_REGION name
 
-    public int getId() {
-        return id;
+    public int getIdReg() {
+        return idReg;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdReg(int idReg) {
+        this.idReg = idReg;
     }
 
-    public String getName() {
-        return name;
+    public String getNameReg() {
+        return nameReg;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameReg(String nameReg) {
+        this.nameReg = nameReg;
     }
 
     @Override
     public String toString() {
-        return "Region{" + "id=" + id + ", name=" + name + '}';
+        return "Region{" + "id=" + idReg + ", name=" + nameReg + '}';
     }    
-
-    public void getName(String antartika) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void getId(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
