@@ -30,11 +30,11 @@ public class InsertRegionTable {
     System.out.println("\nID Region :"+nama_region);
     System.out.println("\nRegion :"+id_region);
         
-    Region region = new Region();
-    region.setIdReg(id_region2);
-    region.setNameReg(nama_region);
+    Region inReg = new Region();
+    inReg.setIdReg(id_region2);
+    inReg.setNameReg(nama_region);
         
-    if (rdao.insert(region)) {
+    if (rdao.insert(inReg)) {
        System.out.println("BERHASIL INSERT");
     }
     

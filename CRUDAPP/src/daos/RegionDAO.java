@@ -40,13 +40,13 @@ public class RegionDAO {
         }
         return regions;
     } 
-    public boolean insert(Region region) {
+    public boolean insert(Region inReg) {
         boolean result = false;
         String query = "INSERT INTO REGIONS(region_name,region_id) VALUES(?,?)";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, region.getNameReg());
-            preparedStatement.setInt(2, region.getIdReg());
+            preparedStatement.setString(1, inReg.getNameReg());
+            preparedStatement.setInt(2, inReg.getIdReg());
             preparedStatement.executeQuery();
             result = true;
         } catch (Exception e) {
