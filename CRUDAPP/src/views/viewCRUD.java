@@ -34,6 +34,7 @@ public class viewCRUD {
         System.out.println("||                                                                                                         ||");
         System.out.println("||                                       APLIKASI CRUD HR SCHEME                                           ||");
         System.out.println("||                               ini merupakan aplikasi CRUD HR SCHEME sederhana                           ||");
+        System.out.println("||                                                                                                         ||");
         System.out.println("||=========================================================================================================||");
         System.out.println("||\t Menu: 1. Show Data: \t|| 2. Insert Data \t|| 3. Update Data \t|| 4. Delete Data          ||");
         System.out.println("||=========================================================================================================||");

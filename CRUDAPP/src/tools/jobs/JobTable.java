@@ -48,17 +48,17 @@ public class JobTable {
     public static void updateJobs() {
         
     Job updateJob = new Job();
-    System.out.print("Masukkan ID Job : ");
+    System.out.print("Masukkan ID Job yang ingin di ubah : ");
     id_job = inpJob.nextLine();        
     updateJob.setIdJob(id_job);
-    System.out.print("Masukkan Title Job : ");
+    System.out.print("Masukkan Title Job baru : ");
     title_job = inpJob.nextLine();
     updateJob.setTitleJob(title_job);
-    System.out.print("Masukkan Min Salary : ");
+    System.out.print("Masukkan Min Salary baru : ");
     min_temp = inpJob.nextLine();
     min_salary = Integer.parseInt(min_temp);
     updateJob.setJob_minSalary(min_salary);
-    System.out.print("Masukkan Max Salary : ");
+    System.out.print("Masukkan Max Salary baru : ");
     max_temp = inpJob.nextLine();
     max_salary = Integer.parseInt(max_temp);
     updateJob.setJob_maxSalary(max_salary);

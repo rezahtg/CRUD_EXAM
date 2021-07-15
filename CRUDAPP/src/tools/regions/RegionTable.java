@@ -20,7 +20,7 @@ public class RegionTable {
     public static RegionDAO rdao = new RegionDAO(connection.getConnection());
     
     public static Scanner inpReg = new Scanner(System.in);
-    public static String nama_region, id_region;
+    public static String nama_region, id_region, idReg_temp;
     public static int id_region2;
     
     public static void insertRegion() {        
@@ -45,11 +45,11 @@ public class RegionTable {
     public static void updateRegion() {
 
     Region reg = new Region();
-    System.out.print("Masukkan ID Region = ");
+    System.out.print("Masukkan ID Region yang ingin di ubah = ");
     id_region = inpReg.nextLine();
     id_region2 = Integer.parseInt(id_region);                
     reg.setIdReg(id_region2);              
-    System.out.print("Masukkan Nama Region = ");
+    System.out.print("Masukkan Nama Region baru = ");
     nama_region = inpReg.nextLine();
     reg.setNameReg(nama_region);
     System.out.println("ID Region :"+id_region2);
@@ -77,8 +77,7 @@ public class RegionTable {
     public static void showRegion() {
    
     for (Region r : rdao.getAll()) {
-        System.out.println("||=========================================||");
-        System.out.println("||\t"+r.getIdReg()+"\t||\t "+r.getNameReg()+"\t\t   ||");
+        System.out.println(r.getIdReg()+" - "+r.getNameReg());
     }      
 }
     
