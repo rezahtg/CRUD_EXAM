@@ -5,7 +5,6 @@
  */
 package tools.country;
 
-import static CRUDAPP.scanner;
 import daos.CountryDAO;
 import models.Country;
 import tools.DB_Connections;
@@ -27,7 +26,10 @@ public class InsertCountryTable {
         CountryDAO countdao = new CountryDAO(connection.getConnection());
         System.out.println("Masukkan Country ID : ");
         c_id = scanner.nextLine();
-        System.out.println("Masukkan Country ID : ");
+        System.out.println("Masukkan Country Name : ");
+        c_name = scanner.nextLine();
+        System.out.println("Masukkan Region Name : ");
+        c_reg = scanner.nextInt();
         
          // memasukkan data inputan pada table country
         Country country = new Country();

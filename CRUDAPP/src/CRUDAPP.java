@@ -93,7 +93,7 @@ public class CRUDAPP {
 //            System.out.println(loc.getLocation_id() + " - " + loc.getStreet() + " - " + loc.getPostal_code() + " - " + loc.getCity() + " - " + loc.getState() + " - " + loc.getCountry_id()); 
 //        }
         Header();
-        showCountry();
+ 
         
     }
     
