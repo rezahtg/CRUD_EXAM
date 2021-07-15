@@ -51,6 +51,7 @@ public class viewCRUD {
             menuDelete();
         }else if(menu.equals("0")){
            //exit
+           System.exit(0);
         }else {
             System.out.println("Perintah Tidak dikenali");
         }
@@ -64,7 +65,8 @@ public class viewCRUD {
         if (menu.equals("y")) {
             Header();
         }else if(menu.equals("n")){
-            //break
+            //
+            System.exit(0);
         }
         System.out.println("");
     }
@@ -95,6 +97,7 @@ public class viewCRUD {
             Header();
         }else if(menu.equals("0")){
             //exit
+            System.exit(0);
         }
         else {
             System.out.println("Perintah Tidak dikenali");
@@ -140,6 +143,7 @@ public class viewCRUD {
             Header();
         }else if(menu.equals("0")){
             //exit
+            System.exit(0);
         }
         else {
             System.out.println("Perintah Tidak dikenali");
@@ -188,6 +192,7 @@ public class viewCRUD {
             Header();
         }else if(menu.equals("0")){
             //exit
+            System.exit(0);
         }
         else {
             System.out.println("Perintah Tidak dikenali");
@@ -233,6 +238,7 @@ public class viewCRUD {
             Header();
         }else if(menu.equals("0")){
             //exit
+            System.exit(0);
         }
         else {
             System.out.println("Perintah Tidak dikenali");
