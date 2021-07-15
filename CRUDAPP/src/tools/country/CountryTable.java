@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tools;
+package tools.country;
 
 import daos.CountryDAO;
 import models.Country;
+import tools.DB_Connections;
 
 /**
  *

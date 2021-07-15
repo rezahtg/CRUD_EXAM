@@ -5,12 +5,6 @@
  */
 
 
-import tools.LocationTable;
-import tools.country.DeleteCountryTable;
-import tools.country.InsertCountryTable;
-import tools.country.ShowCountryTable;
-
-
 /**
  *
  * @author rezar
@@ -26,35 +20,23 @@ public class CRUDAPP {
     public static void main(String[] args) {
         
         Header();
-        LocationTable.showLocation();
-        LocationTable.updateLoc();
-        LocationTable.showLocation();
+        CountryTable.showCountry();
+        
+;
     }
     
     public static void Header(){
-        System.out.println("||=====================================================||");
-        System.out.println("||                                                     ||");
-        System.out.println("||           Aplikasi Karyawan Sederahana              ||");
-        System.out.println("||   ini merupakan aplikasi CRUD karyawan sederhana    ||");
-        System.out.println("||=====================================================||");
-    }
-    /**
-     * Tabel Country
-     */
-    public static void showCountry(){
-        ShowCountryTable.showCountry();
+        System.out.println("||=========================================================================================================||");
+        System.out.println("||                                                                                                         ||");
+        System.out.println("||                                       APLIKASI CRUD HR SCHEME                                           ||");
+        System.out.println("||                               ini merupakan aplikasi CRUD HR SCHEME sederhana                           ||");
+        System.out.println("||=========================================================================================================||");
+        System.out.println("||Menu: 1. Show Data: \t|| 2. Insert Data \t|| 3. Update Data \t|| 4. Delete Data                  ||");
+        System.out.println("||=========================================================================================================||");
+        System.out.print("Pilih Mana: ");
+        
     }
     
-    public static void insertCountry(){
-        InsertCountryTable.insertCount();
-        showCountry();
-    }
-    
-    public static void deleteCountry(){
-        showCountry();
-        DeleteCountryTable.deleteCount();
-        showCountry();
-    }
     
     
     

@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tools;
+package tools.location;
 
 import daos.CountryDAO;
 import daos.LocationDAO;
 import models.Country;
 import models.Location;
-import static tools.CountryTable.countdao;
-import static tools.CountryTable.scanner;
+import tools.DB_Connections;
+import static tools.country.CountryTable.countdao;
+import static tools.country.CountryTable.scanner;
 
 /**
  *
