@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAOS;
+package daos;
 
-import Model.Employee;
+import models.Employee;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
