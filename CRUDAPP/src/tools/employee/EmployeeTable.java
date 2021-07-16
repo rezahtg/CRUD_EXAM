@@ -202,14 +202,41 @@ public class EmployeeTable {
     public static void ShowEmp()
             
     {
-                for (Employee emplo : empDAO.getEmployees()) {
-            System.out.println(emplo.getId_employee() + " || " + emplo.getFirst_name()+
-                    " || "+ emplo.getLast_name()+
-                    " || "+emplo.getEmail() + " || " + emplo.getPhone_number()+
-                    " || " + emplo.getJob_id() + " || " + emplo.getSalary() +
-                    " || " + emplo.getCommission_pct() + " || " + emplo.getManager_id() +
-                    " || " + emplo.getDepartment_id() + " || " + emplo.getHire_date());
-        }
+//        int i = 1;
+//                for (Employee emplo : empDAO.getEmployees()) {
+//                    
+//                    
+//            System.out.println(i+" || "+emplo.getId_employee() + " || " + emplo.getFirst_name()+
+//                    " || "+ emplo.getLast_name()+
+//                    " || "+emplo.getEmail() + " || " + emplo.getPhone_number()+
+//                    " || " + emplo.getJob_id() + " || " + emplo.getSalary() +
+//                    " || " + emplo.getCommission_pct() + " || " + emplo.getManager_id() +
+//                    " || " + emplo.getDepartment_id() + " || " + emplo.getHire_date());
+//            i++;
+//        }
+
+        
+        
+        
+                
+        System.out.println("---------------------------------------------------------------");
+        System.out.println(String.format("|%-5s|%-15s|%15s|%-18s|%15s|%-25s|%10s|%-15s|%15s|%-15s|%15s|%-15s|", "  NO","   Employee Id", " First Name",
+                "   Last Name","    Email","    Phone Number"," Job Id","   Salary",
+                "   Commission PCT","   Manager ID","   Department ID", "   Hire Date"));
+        System.out.println("---------------------------------------------------------------");
+       
+        int no = 1;
+        
+        for (Employee emplo : empDAO.getEmployees()) {
+        System.out.println(String.format("|%-5s|%-15s|%-15s|%-20s|%-24s|%-19s|%-10s|%-20s|%-15s|%-20s|%-10s|%-10s|",no,emplo.getId_employee(),emplo.getFirst_name(),
+                emplo.getLast_name(),emplo.getEmail(),emplo.getPhone_number(),emplo.getJob_id(),emplo.getSalary(),emplo.getCommission_pct(),
+                emplo.getManager_id(),emplo.getDepartment_id(),emplo.getHire_date()));
+        
+        no++;
+    }
+        System.out.println("---------------------------------------------------------------");
+        
+        
     }
     
 }
