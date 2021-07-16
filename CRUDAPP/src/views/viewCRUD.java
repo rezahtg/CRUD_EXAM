@@ -22,10 +22,10 @@ public class viewCRUD {
     
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
     public static void viewsCRUD(){
-        Header();
+        header();
     }
     
-    public static void Header(){
+    public static void header(){
         System.out.println("");
         System.out.println("||=========================================================================================================||");
         System.out.println("||                                                                                                         ||");
@@ -49,7 +49,10 @@ public class viewCRUD {
             menuUpdate();
         }else if(menu.equals("4")){
             menuDelete();
-        }else if(menu.equals("0")){
+        }else if(menu.equals("5")){
+            menuSelect();
+        }
+        else if(menu.equals("0")){
            //exit
            System.exit(0);
         }else {
@@ -57,13 +60,13 @@ public class viewCRUD {
         }
     }
     
-    public static void Footer(){
+    public static void footer(){
         System.out.println("");
         System.out.println("Yay, Perintah Selesai!");
         System.out.print("Mulai Lagi?(y/n)");
         menu = scanner.nextLine();
         if (menu.equals("y")) {
-            Header();
+            header();
         }else if(menu.equals("n")){
             //
             System.exit(0);
@@ -94,7 +97,7 @@ public class viewCRUD {
         }else if(menu.equals("6")){
             RegionTable.showRegion();
         }else if(menu.equals("9")){
-            Header();
+            header();
         }else if(menu.equals("0")){
             //exit
             System.exit(0);
@@ -102,7 +105,7 @@ public class viewCRUD {
         else {
             System.out.println("Perintah Tidak dikenali");
         }
-        Footer();
+        footer();
     }
     
     public static void menuInsert(){
@@ -140,7 +143,7 @@ public class viewCRUD {
             RegionTable.insertRegion();
             RegionTable.showRegion();
         }else if(menu.equals("9")){
-            Header();
+            header();
         }else if(menu.equals("0")){
             //exit
             System.exit(0);
@@ -148,7 +151,7 @@ public class viewCRUD {
         else {
             System.out.println("Perintah Tidak dikenali");
         }
-        Footer();
+        footer();
     }
     
     public static void menuUpdate(){
@@ -189,7 +192,7 @@ public class viewCRUD {
             RegionTable.updateRegion();
             RegionTable.showRegion();
         }else if(menu.equals("9")){
-            Header();
+            header();
         }else if(menu.equals("0")){
             //exit
             System.exit(0);
@@ -197,7 +200,7 @@ public class viewCRUD {
         else {
             System.out.println("Perintah Tidak dikenali");
         }
-        Footer();
+        footer();
     }
     
     public static void menuDelete(){
@@ -235,7 +238,7 @@ public class viewCRUD {
             RegionTable.deleteRegion();
             RegionTable.showRegion();
         }else if(menu.equals("9")){
-            Header();
+            header();
         }else if(menu.equals("0")){
             //exit
             System.exit(0);
@@ -243,7 +246,51 @@ public class viewCRUD {
         else {
             System.out.println("Perintah Tidak dikenali");
         }
-        Footer();
+        footer();
+    }
+    
+    public static void menuSelect(){
+        System.out.println("Select From Table:");
+        System.out.println("1. Employee");
+        System.out.println("2. Departments");
+        System.out.println("3. Jobs");
+        System.out.println("4. Locations");
+        System.out.println("5. Country");
+        System.out.println("6. Regions");
+        System.out.print("Pilih Table:");
+        menu = scanner.nextLine();
+        if (menu.equals("1")) {
+            EmployeeTable.ShowEmp();
+            EmployeeTable.DeleteEmp();
+            EmployeeTable.ShowEmp();
+        }else if(menu.equals("2")){
+            DepartmentTable.showdept();
+            DepartmentTable.deletedept();
+            DepartmentTable.showdept();
+        }else if(menu.equals("3")){
+            JobTable.showJobs();
+            JobTable.deleteJobs();
+            JobTable.showJobs();
+        }else if(menu.equals("4")){
+            LocationTable.showLocation();
+            LocationTable.deleteLoc();
+            LocationTable.showLocation();
+        }else if(menu.equals("5")){
+            CountryTable.showCountry();
+            CountryTable.deleteCount();
+             CountryTable.showCountry();
+        }else if(menu.equals("6")){
+            RegionTable.selectRegion();
+        }else if(menu.equals("9")){
+            header();
+        }else if(menu.equals("0")){
+            //exit
+            System.exit(0);
+        }
+        else {
+            System.out.println("Perintah Tidak dikenali");
+        }
+        footer();
     }
     
 }

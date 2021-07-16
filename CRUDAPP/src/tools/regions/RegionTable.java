@@ -83,6 +83,9 @@ public class RegionTable {
         System.out.println(String.format("|%-30s|%30s|",r.getNameReg(),r.getIdReg()));
     }      
         System.out.println("---------------------------------------------------------------");
+
+        System.out.println(r.getIdReg()+" - "+r.getNameReg());
+    }   
 }
-    
+
 }
