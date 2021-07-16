@@ -113,10 +113,13 @@ public class DepartmentTable {
     public static void showdept()
     {
       
-
+    System.out.println("--------------------------------------------------------------");
+    System.out.println(String.format("|%-10s|%-23s|%-12s|%-12s|", "Dept. ID","Dept. Name", "Manager ID", "Location ID"));
+    System.out.println("--------------------------------------------------------------");
         for (Department dep : depDAO.getDepartment()) {
-            System.out.println(dep.getDepartment_id() + " || " + dep.getDepartment_name() + " || "+ dep.getManager_id() + " || " + dep.getLocation_id());
+            System.out.println(String.format("|%-10s|%-23s|%-12s|%-12s|",dep.getDepartment_id(), dep.getDepartment_name(), dep.getManager_id(), dep.getLocation_id()));
         }
+    System.out.println("--------------------------------------------------------------");
         
     }
    
