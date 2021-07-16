@@ -21,9 +21,13 @@ public class LocationTable {
     
     public static void showLocation(){    
          // Menampilkan data dari tabel country
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+        System.out.println(String.format("|%-5s|%-42s|%-15s|%-20s|%-18s|%-10s|", "  ID", "                    Street Name", "   Postal Code", "         City","       State","Country ID"));
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
         for (Location location : locdao.getAll()) {
-            System.out.println(location.getLocation_id() + " - " + location.getStreet() + " - " + location.getPostal_code() + " - " + location.getCity() + " - " + location.getState() + " - " + location.getCountry_id()); 
+            System.out.println(String.format("|%-5s|%-42s|%-15s|%-20s|%-18s|%-10s|",location.getLocation_id(),location.getStreet(), location.getPostal_code() ,location.getCity(),location.getState() ,location.getCountry_id())); 
         }
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
     }
     
     public static void insertloc(){
