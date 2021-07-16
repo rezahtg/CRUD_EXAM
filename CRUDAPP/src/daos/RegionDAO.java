@@ -87,18 +87,18 @@ public class RegionDAO {
         return result;
     }
     
-    public List<Region> getSelect(int reg) {
+    public List<Region> getSelect(int selreg) {
         List<Region> regions = new ArrayList<Region>();
         String query = "SELECT * FROM REGIONS WHERE REGION_ID = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, reg);
+            preparedStatement.setInt(1, selreg);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                Region r = new Region();
-                r.setIdReg(resultSet.getInt(1));
-                r.setNameReg(resultSet.getString(2));
-                regions.add(r);
+                Region sr = new Region();
+                sr.setIdReg(resultSet.getInt(1));
+                sr.setNameReg(resultSet.getString(2));
+                regions.add(sr);
             }
         } catch (Exception e) {
             e.printStackTrace();

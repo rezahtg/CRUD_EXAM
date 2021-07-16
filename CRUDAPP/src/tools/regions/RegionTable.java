@@ -84,8 +84,19 @@ public class RegionTable {
     }      
         System.out.println("---------------------------------------------------------------");
 
-        System.out.println(r.getIdReg()+" - "+r.getNameReg());
+
     }   
+    
+    public static void selectRegion(){
+    System.out.print("Masukkan ID Region = ");
+    id_region2 = inpReg.nextInt();
+    
+    Region selReg = new Region();
+    selReg.setIdReg(id_region2);
+   
+    for (Region reg : rdao.getSelect(id_region2)) {
+        System.out.println(reg.getIdReg()+" - "+reg.getNameReg());
+    }   
+    }
 }
 
-}
