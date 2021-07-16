@@ -79,8 +79,12 @@ public class JobTable {
   }
     
     public static void showJobs() {
+    System.out.println("----------------------------------------------------------------------------");
+    System.out.println(String.format("|%-12s|%-35s|%-12s|%-12s|", "Job ID","Job Title", "Min Salary", "Max Salary"));
+    System.out.println("----------------------------------------------------------------------------");
     for (Job j : jdao.getAJobs()) {
-    System.out.println(j.getIdJob()+"---"+j.getTitleJob()+"---"+j.getJob_minSalary()+"---"+j.getJob_maxSalary());
+    System.out.println(String.format("|%-12s|%-35s|%-12s|%-12s|",j.getIdJob(),j.getTitleJob(),j.getJob_minSalary(),j.getJob_maxSalary()));
     }    
+    System.out.println("----------------------------------------------------------------------------");
   }  
 }
