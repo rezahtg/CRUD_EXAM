@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import models.Country;
+import models.Location;
 
 /**
  *
@@ -96,6 +97,26 @@ public class CountryDAO {
             result = false;
         }
         return result;
+    }
+    
+    public List<Country> getSelect(String selcount) {
+        List<Country> countries = new ArrayList<Country>();
+        String query = "SELECT * FROM COUNTRIES WHERE COUNTRY_ID = ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, selcount);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Country c = new Country();
+                c.setCountry_id(resultSet.getString(1));
+                c.setCountry_name(resultSet.getString(2));
+                c.setRegion_id(resultSet.getInt(3));
+                countries.add(c);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return countries;
     }
     
 }

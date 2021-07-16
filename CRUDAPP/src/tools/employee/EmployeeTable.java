@@ -6,8 +6,11 @@
 package tools.employee;
 
 import daos.EmployeeDAO;
+import models.Department;
 import models.Employee;
 import tools.DB_Connections;
+import static tools.department.DepartmentTable.depDAO;
+import static tools.department.DepartmentTable.scanner;
 
 /**
  *
@@ -239,4 +242,32 @@ public class EmployeeTable {
         
     }
     
+    public static void selectEmp(){
+    
+        System.out.print("Masukkan ID EMPLOYEE = ");
+        int id_emp = scanner.nextInt();
+
+        Employee selemp = new Employee();
+        selemp.setDepartment_id(id_emp);
+   
+         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println(String.format("|%-5s|%-15s|%15s|%-20s|%-24s|%-19s|%-12s|%-12s|%-15s|%-12s|%-15s|%-25s|", "NO","Employee Id", "First Name",
+                "Last Name","Email","Phone Number","Job Id","Salary",
+                "Commission PCT","Manager ID","Department ID", "Hire Date"));
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+       
+        int no = 1;
+        
+        for (Employee emplo : empDAO.getSelect(id_emp)) {
+        System.out.println(String.format("|%-5s|%-15s|%-15s|%-20s|%-24s|%-19s|%-12s|%-12s|%-15s|%-12s|%-15s|%-25s|",no,emplo.getId_employee(),emplo.getFirst_name(),
+                emplo.getLast_name(),emplo.getEmail(),emplo.getPhone_number(),emplo.getJob_id(),emplo.getSalary(),emplo.getCommission_pct(),
+                emplo.getManager_id(),emplo.getDepartment_id(),emplo.getHire_date()));
+        
+        no++;
+    }
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        
+        
+    }
 }
+

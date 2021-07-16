@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import models.Country;
 import models.Job;
 
 /**
@@ -87,5 +88,26 @@ public class JobDAO {
             e.printStackTrace();
         }
         return jobs;
-    } 
+    }
+    
+    public List<Job> getSelect(String seljob) {
+        List<Job> jobs = new ArrayList<Job>();
+        String query = "SELECT * FROM JOBS WHERE JOB_ID = ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, seljob);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Job j = new Job();
+                j.setIdJob(resultSet.getString(1));
+                j.setTitleJob(resultSet.getString(2));
+                j.setJob_minSalary(resultSet.getInt(3));
+                j.setJob_maxSalary(resultSet.getInt(4));
+                jobs.add(j);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return jobs;
+    }
 }

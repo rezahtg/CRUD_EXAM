@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import models.Job;
 
 /**
  *
@@ -109,5 +110,26 @@ public class DepartmentDAO {
             result = false;
         }
         return result;
+    }
+    
+    public List<Department> getSelect(int seldept) {
+        List<Department> departments = new ArrayList<Department>();
+        String query = "SELECT * FROM DEPARTMENTS WHERE DEPARTMENT_ID = ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, seldept);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Department e = new Department();
+                e.setDepartment_id(resultSet.getInt(1));
+                e.setDepartment_name(resultSet.getString(2));
+                e.setManager_id(resultSet.getInt(3));
+                e.setLocation_id(resultSet.getInt(4));
+                departments.add(e);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return departments;
     }
 }

@@ -95,9 +95,13 @@ public class RegionTable {
     Region selReg = new Region();
     selReg.setIdReg(id_region2);
    
-    for (Region reg : rdao.getSelect(id_region2)) {
-        System.out.println(reg.getIdReg()+" - "+reg.getNameReg());
-    }   
+    System.out.println("---------------------------------------------------------------");
+        System.out.println(String.format("|%-30s|%-30s|", "          Region Name", "           Region ID"));
+        System.out.println("---------------------------------------------------------------");
+    for (Region r : rdao.getSelect(id_region2)) {
+        System.out.println(String.format("|%-30s|%30s|",r.getNameReg(),r.getIdReg()));
+    }      
+        System.out.println("---------------------------------------------------------------");  
     }
 }
 

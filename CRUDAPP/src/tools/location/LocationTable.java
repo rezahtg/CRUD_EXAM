@@ -7,7 +7,11 @@ package tools.location;
 
 import daos.LocationDAO;
 import models.Location;
+import models.Region;
 import tools.DB_Connections;
+import static tools.regions.RegionTable.id_region2;
+import static tools.regions.RegionTable.inpReg;
+import static tools.regions.RegionTable.rdao;
 
 /**
  *
@@ -138,5 +142,22 @@ public class LocationTable {
         } else{
             System.out.println("Data gagal dihapus");
         }
+    }
+    
+    public static void selectLocation(){
+    
+    System.out.print("Masukkan ID Location = ");
+    int id_loc = scanner.nextInt();
+    
+    Location selloc = new Location();
+    selloc.setLocation_id(id_loc);
+   
+     System.out.println("---------------------------------------------------------------------------------------------------------------------");
+        System.out.println(String.format("|%-5s|%-42s|%-15s|%-20s|%-18s|%-10s|", "  ID", "                    Street Name", "   Postal Code", "         City","       State","Country ID"));
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+        for (Location location : locdao.getSelect(id_loc)) {
+            System.out.println(String.format("|%-5s|%-42s|%-15s|%-20s|%-18s|%-10s|",location.getLocation_id(),location.getStreet(), location.getPostal_code() ,location.getCity(),location.getState() ,location.getCountry_id())); 
+        }
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
     }
 }

@@ -7,8 +7,11 @@ package tools.jobs;
 
 import daos.JobDAO;
 import java.util.Scanner;
+import models.Country;
 import models.Job;
 import tools.DB_Connections;
+import static tools.country.CountryTable.countdao;
+import static tools.country.CountryTable.scanner;
 
 /**
  *
@@ -87,6 +90,26 @@ public class JobTable {
     System.out.println(String.format("|%-5s|%-12s|%-35s|%-12s|%-12s|",no,j.getIdJob(),j.getTitleJob(),j.getJob_minSalary(),j.getJob_maxSalary()));
     no++;
     }    
+
     System.out.println("----------------------------------------------------------------------------------");
   }  
+    
+    
+    public static void selectJobs(){
+    
+        System.out.print("Masukkan ID JOBS = ");
+        String id_j = scanner.nextLine();
+
+        Job seljob = new Job();
+        seljob.setIdJob(id_j);
+   
+        System.out.println("----------------------------------------------------------------------------");
+        System.out.println(String.format("|%-12s|%-35s|%-12s|%-12s|", "Job ID","Job Title", "Min Salary", "Max Salary"));
+        System.out.println("----------------------------------------------------------------------------");
+        for (Job j : jdao.getSelect(id_j)) {
+        System.out.println(String.format("|%-12s|%-35s|%-12s|%-12s|",j.getIdJob(),j.getTitleJob(),j.getJob_minSalary(),j.getJob_maxSalary()));
+        }    
+        System.out.println("----------------------------------------------------------------------------");
+        }
+    
 }

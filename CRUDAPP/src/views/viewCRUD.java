@@ -27,14 +27,14 @@ public class viewCRUD {
     
     public static void header(){
         System.out.println("");
-        System.out.println("||=========================================================================================================||");
-        System.out.println("||                                                                                                         ||");
-        System.out.println("||                                       APLIKASI CRUD HR SCHEME                                           ||");
-        System.out.println("||                               ini merupakan aplikasi CRUD HR SCHEME sederhana                           ||");
-        System.out.println("||                                                                                                         ||");
-        System.out.println("||=========================================================================================================||");
-        System.out.println("||\t Menu: 1. Show Data: \t|| 2. Insert Data \t|| 3. Update Data \t|| 4. Delete Data          ||");
-        System.out.println("||=========================================================================================================||");
+        System.out.println("||===============================================================================================================||");
+        System.out.println("||                                                                                                               ||");
+        System.out.println("||                                       APLIKASI CRUD HR SCHEME                                                 ||");
+        System.out.println("||                               ini merupakan aplikasi CRUD HR SCHEME sederhana                                 ||");
+        System.out.println("||                                                                                                               ||");
+        System.out.println("||===============================================================================================================||");
+        System.out.println("|| Menu: 1. Show Data: \t|| 2. Insert Data \t|| 3. Update Data \t|| 4. Delete Data \t|| 5.Search Data ||");
+        System.out.println("||===============================================================================================================||");
         System.out.println("");
         System.out.print("Pilih Menu (0.Exit): ");
         menu = scanner.nextLine();
@@ -261,24 +261,15 @@ public class viewCRUD {
         menu = scanner.nextLine();
         if (menu.equals("1")) {
             EmployeeTable.ShowEmp();
-            EmployeeTable.DeleteEmp();
-            EmployeeTable.ShowEmp();
+            EmployeeTable.selectEmp();
         }else if(menu.equals("2")){
-            DepartmentTable.showdept();
-            DepartmentTable.deletedept();
-            DepartmentTable.showdept();
+            DepartmentTable.selectDept();
         }else if(menu.equals("3")){
-            JobTable.showJobs();
-            JobTable.deleteJobs();
-            JobTable.showJobs();
+            JobTable.selectJobs();
         }else if(menu.equals("4")){
-            LocationTable.showLocation();
-            LocationTable.deleteLoc();
-            LocationTable.showLocation();
+            LocationTable.selectLocation();
         }else if(menu.equals("5")){
-            CountryTable.showCountry();
-            CountryTable.deleteCount();
-             CountryTable.showCountry();
+            CountryTable.selectCountry();
         }else if(menu.equals("6")){
             RegionTable.selectRegion();
         }else if(menu.equals("9")){

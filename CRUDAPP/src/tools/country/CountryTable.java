@@ -108,4 +108,21 @@ public class CountryTable {
             System.out.println("Data gagal ditambahkan");
         }
     }
+    
+    public static void selectCountry(){
+    
+        System.out.print("Masukkan ID Country = ");
+        String id_c = scanner.nextLine();
+
+        Country selcount = new Country();
+        selcount.setCountry_id(id_c);
+   
+        System.out.println("--------------------------------------------------------");
+        System.out.println(String.format("|%-12s|%-30s|%-10s|", "Country ID","          Country Name", "Region ID"));
+        System.out.println("--------------------------------------------------------");
+        for (Country country : countdao.getSelect(id_c)) {
+            System.out.println(String.format("|%-12s|%-30s|%-10s|",country.getCountry_id() ,country.getCountry_name() ,country.getRegion_id())); 
+        }
+        System.out.println("--------------------------------------------------------");
+    }
 }

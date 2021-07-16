@@ -7,7 +7,6 @@ package tools.department;
 
 import daos.DepartmentDAO;
 import models.Department;
-import oracle.net.aso.i;
 import tools.DB_Connections;
 
 /**
@@ -126,6 +125,20 @@ public class DepartmentTable {
         
     }
    
+    public static void selectDept(){
     
-    
+        System.out.print("Masukkan ID DEPARTMENTS = ");
+        int id_dept = scanner.nextInt();
+
+        Department seldept = new Department();
+        seldept.setDepartment_id(id_dept);
+   
+        System.out.println("--------------------------------------------------------------");
+        System.out.println(String.format("|%-10s|%-23s|%-12s|%-12s|", "Dept. ID","Dept. Name", "Manager ID", "Location ID"));
+        System.out.println("--------------------------------------------------------------");
+        for (Department dep : depDAO.getSelect(id_dept)) {
+            System.out.println(String.format("|%-10s|%-23s|%-12s|%-12s|",dep.getDepartment_id(), dep.getDepartment_name(), dep.getManager_id(), dep.getLocation_id()));
+        }
+        System.out.println("--------------------------------------------------------------");
+    }
 }

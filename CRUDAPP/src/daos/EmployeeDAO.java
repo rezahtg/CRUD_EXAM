@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import models.Department;
 
 /**
  *
@@ -147,5 +148,32 @@ public class EmployeeDAO {
         return result;
     }
     
+    public List<Employee> getSelect(int selemp) {
+        List<Employee> employees = new ArrayList<Employee>();
+        String query = "SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID = ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, selemp);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Employee e = new Employee();
+                e.setId_employee(resultSet.getInt(1));
+                e.setFirst_name(resultSet.getString(2));
+                e.setLast_name(resultSet.getString(3));
+                e.setEmail(resultSet.getString(4));
+                e.setPhone_number(resultSet.getString(5));
+                e.setHire_date(resultSet.getString(6));
+                e.setJob_id(resultSet.getString(7));
+                e.setSalary(resultSet.getDouble(8));
+                e.setCommission_pct(resultSet.getDouble(9));
+                e.setManager_id(resultSet.getInt(10));
+                e.setDepartment_id(resultSet.getInt(11));
+                employees.add(e);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return employees;
+    }
     
 }

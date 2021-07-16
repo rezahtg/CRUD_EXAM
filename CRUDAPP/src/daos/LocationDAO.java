@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import models.Country;
 import models.Location;
+import models.Region;
 
 /**
  *
@@ -106,6 +107,28 @@ public class LocationDAO {
             result = false;
         }
         return result;
+    }
+    
+    public List<Location> getSelect(int selloc) {
+        List<Location> locations = new ArrayList<Location>();
+        String query = "SELECT * FROM LOCATIONS WHERE LOCATION_ID = ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, selloc);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Location loc = new Location();
+                loc.setLocation_id(resultSet.getInt(1));
+                loc.setStreet(resultSet.getString(2));
+                loc.setPostal_code(resultSet.getString(3));
+                loc.setCity(resultSet.getString(4));
+                loc.setState(resultSet.getString(5));
+                locations.add(loc);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return locations;
     }
     
 }
