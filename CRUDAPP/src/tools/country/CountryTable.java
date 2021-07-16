@@ -21,13 +21,15 @@ public class CountryTable {
     
     public static void showCountry(){    
          // Menampilkan data dari tabel country
-        System.out.println("--------------------------------------------------------");
-        System.out.println(String.format("|%-12s|%-30s|%-10s|", "Country ID","          Country Name", "Region ID"));
-        System.out.println("--------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println(String.format("|%-5s|%-12s|%-30s|%-10s|","NO", "Country ID","          Country Name", "Region ID"));
+        System.out.println("-------------------------------------------------------------------");
+        int no = 1;
         for (Country country : countdao.getAll()) {
-            System.out.println(String.format("|%-12s|%-30s|%-10s|",country.getCountry_id() ,country.getCountry_name() ,country.getRegion_id())); 
+            System.out.println(String.format("|%-5s|%-12s|%-30s|%-10s|",no,country.getCountry_id() ,country.getCountry_name() ,country.getRegion_id()));
+            no++;
         }
-        System.out.println("--------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
     }
     
     public static void insertCount(){

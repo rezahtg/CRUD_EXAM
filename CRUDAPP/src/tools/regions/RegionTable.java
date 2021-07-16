@@ -76,14 +76,15 @@ public class RegionTable {
     
     public static void showRegion() {
    
-        System.out.println("---------------------------------------------------------------");
-        System.out.println(String.format("|%-30s|%-30s|", "          Region Name", "           Region ID"));
-        System.out.println("---------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println(String.format("|%-5s|%-30s|%-30s|","NO", "          Region Name", "           Region ID"));
+        System.out.println("---------------------------------------------------------------------");
+        int no = 1;
     for (Region r : rdao.getAll()) {
-        System.out.println(String.format("|%-30s|%30s|",r.getNameReg(),r.getIdReg()));
+        System.out.println(String.format("|%-5s|%-30s|%30s|",no,r.getNameReg(),r.getIdReg()));
+        no++;
     }      
-        System.out.println("---------------------------------------------------------------");
-
+        System.out.println("---------------------------------------------------------------------");
 
     }   
     

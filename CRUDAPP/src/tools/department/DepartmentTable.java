@@ -7,6 +7,7 @@ package tools.department;
 
 import daos.DepartmentDAO;
 import models.Department;
+import oracle.net.aso.i;
 import tools.DB_Connections;
 
 /**
@@ -113,13 +114,15 @@ public class DepartmentTable {
     public static void showdept()
     {
       
-    System.out.println("--------------------------------------------------------------");
-    System.out.println(String.format("|%-10s|%-23s|%-12s|%-12s|", "Dept. ID","Dept. Name", "Manager ID", "Location ID"));
-    System.out.println("--------------------------------------------------------------");
-        for (Department dep : depDAO.getDepartment()) {
-            System.out.println(String.format("|%-10s|%-23s|%-12s|%-12s|",dep.getDepartment_id(), dep.getDepartment_name(), dep.getManager_id(), dep.getLocation_id()));
-        }
-    System.out.println("--------------------------------------------------------------");
+    System.out.println("-------------------------------------------------------------------------");
+    System.out.println(String.format("|%-5s|%-10s|%-23s|%-12s|%-12s|","NO", "Dept. ID","Dept. Name", "Manager ID", "Location ID"));
+    System.out.println("-------------------------------------------------------------------------");
+    int no = 1;
+    for (Department dep : depDAO.getDepartment()) {
+        System.out.println(String.format("|%-5s|%-10s|%-23s|%-12s|%-12s|",no,dep.getDepartment_id(), dep.getDepartment_name(), dep.getManager_id(), dep.getLocation_id()));
+        no++;
+    }
+    System.out.println("-------------------------------------------------------------------------");
         
     }
    
